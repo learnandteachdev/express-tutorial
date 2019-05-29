@@ -1,0 +1,38 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100' rel='stylesheet' type='text/css'>
+
+    	<!-- the server already knows that styles/ is in public/ because of the
+    		app.use(express.static('public')) -->
+    	<link rel='stylesheet' href='styles/styles.css'/>
+
+    	<!-- viewport (vw) will size up our webpage for all devices and screens -->
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div class="container">
+
+			<%- entry%>
+			<!-- here we build our web form. pay special attention to the attributes used -->
+			<form method="post" action="/" id="user-information-form">
+				<fieldset class="account-info">
+					<label>
+						First Name
+      					<input type="text" name="firstname">
+    				</label>
+    				<label>
+      					Last Name
+      					<input type="text" name="lastname">
+    				</label>
+  				</fieldset>
+  				<fieldset class="account-action">
+    				<input class="btn" type="submit" name="submit" value="Login">
+    					<label>
+      						<input type="checkbox" name="remember"> Stay signed in
+    					</label>
+  				</fieldset>
+			</form>
+		</div>
+	</body>
+</html>
